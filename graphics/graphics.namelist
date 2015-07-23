@@ -1,0 +1,173 @@
+&datetime
+ validation_file_name = "bondville.val"
+
+ ! May be overwritten by command-line arguments -startdate and -enddate
+ startdate = "199801020000"
+ enddate   = "199901010000"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "SOLDN"
+ NOAH_NAME2 = "SOLDN"
+ AVERAGE_DIURNAL_CYCLE = .TRUE.
+ VALD_NAME  = "Rg"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "Q2"
+ NOAH_NAME2 = "Q2"
+ VALD_NAME  = "Q"
+ MINMAX     = .TRUE.
+/
+
+&plot_instructions
+ NOAH_NAME1 = "SNEQV"
+ NOAH_NAME2 = "SNEQV"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "TAUSS"
+ NOAH_NAME2 = "TAUSS"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "LAI"
+ NOAH_NAME2 = "LAI"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "SAI"
+ NOAH_NAME2 = "SAI"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "LFMASS"
+ NOAH_NAME2 = "LFMASS"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "CH"
+ NOAH_NAME2 = "CH"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "CM"
+ NOAH_NAME2 = "CM"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "FVEG"
+ NOAH_NAME2 = "FVEG"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "STC:Level1"
+ NOAH_NAME2 = "STC:Level1"
+ VALD_NAME  = "T_02"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "STC:Level1"
+ NOAH_NAME2 = "STC:Level1"
+ VALD_NAME  = "T_04"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "STC:Level1"
+ NOAH_NAME2 = "STC:Level1"
+ VALD_NAME  = "T_08"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "STC:Level2"
+ NOAH_NAME2 = "STC:Level2"
+ VALD_NAME  = "T_08"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "STC:Level2"
+ NOAH_NAME2 = "STC:Level2"
+ VALD_NAME  = "T_16"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "STC:Level2"
+ NOAH_NAME2 = "STC:Level2"
+ VALD_NAME  = "T_32"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "STC:Level3"
+ NOAH_NAME2 = "STC:Level3"
+ VALD_NAME  = "T_32"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "STC:Level3"
+ NOAH_NAME2 = "STC:Level3"
+ VALD_NAME  = "T_64"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "STC:Level4"
+ NOAH_NAME2 = "STC:Level4"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "SMC:Level1"
+ NOAH_NAME2 = "SMC:Level1"
+ vald_name  = "SM_05"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "SMC:Level2"
+ NOAH_NAME2 = "SMC:Level2"
+ vald_name  = "SM_20"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "SMC:Level3"
+ NOAH_NAME2 = "SMC:Level3"
+ vald_name  = "SM_60"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "SMC:Level4"
+ NOAH_NAME2 = "SMC:Level4"
+/
+
+&plot_instructions
+ NOAH_NAME1 = "TRAD"
+ NOAH_NAME2 = "TRAD"
+ VALD_NAME  = "IRT"
+ MINMAX     = .TRUE.
+ AVERAGE_DIURNAL_CYCLE = .TRUE.
+ scatter = true
+/
+
+&plot_instructions
+ NOAH_NAME1 = "SSOIL"
+ NOAH_NAME2 = "SSOIL"
+ VALD_NAME  = "GHF"
+ MINMAX     = .TRUE.
+ AVERAGE_DIURNAL_CYCLE = .TRUE.
+ scatter = true
+/
+
+&plot_instructions
+ NOAH_NAME1 = "FSH"
+ NOAH_NAME2 = "FSH"
+ vald_name  = "H"
+ MINMAX     = .TRUE.
+ AVERAGE_DIURNAL_CYCLE = .TRUE.
+ scatter = true
+/
+
+&plot_instructions
+ NOAH_NAME1 = "QFX"
+ NOAH_NAME2 = "QFX"
+ vald_name  = "LE"
+ MINMAX     = .TRUE.
+ AVERAGE_DIURNAL_CYCLE = .TRUE.
+ scatter = true
+/

@@ -1,0 +1,80 @@
+README: Offline Noah-MP version 1.1 (consistent with WRF release 3.4.1)
+
+Suggestions, comments, and corrections are welcome (mail to
+kmanning@ucar.edu).
+
+
+Source code:
+
+    The main driver code is "driver.F".The Noah-MP LSM code is in file
+    "module_sf_noahmplsm.F"; the main interface to this code is the
+    call to subroutine NOAHMP_SFLX in the driver.  Other source-code files
+    handle utility codes and details of the I/O procedures, and are
+    not really intended for public consumption.  But feel free to hack
+    away at those codes if you've got some ideas.
+
+Note on NetCDF libraries:
+
+    This code requires that the NetCDF libraries are installed on
+    your machine.  In general, the code provided here should be
+    compiled with the same compiler used to create the NetCDF
+    libraries.  
+
+Note on the graphics code:
+
+    This distribution includes a plotting program, written with the
+    NCAR-Graphics low-level utilities, for creating simple plots of the
+    1d driver output.  This is located in subdirectory "graphics".
+    This graphics code requires that the NCAR-Graphics libraries are
+    installed on your machine.
+
+    The graphics code is set up to compare two NetCDF output files to
+    the observations found in the file "bondville.val".  It is
+    pretty bare-bones stuff, and probably does not do what you want it
+    to.  Don't expect much of it.  Right now, you are basically on
+    your own for any more sophisticated graphical display of model
+    output.
+
+To compile:
+
+    Edit the user_build_options file to set up compiler, compiler
+    options, libraries, etc.  Adjust compiler options library
+    paths, and libraries as necessary from the default settings
+    provided in the default user_build_options file.
+
+    Invoke "make" to compile.  This should create executable file
+    "driver.exe".  Note that the Makefile included here is set up
+    for the GNU make utility.  If "make" does not work on your
+    system, try "gmake".  To compile the graphics code, change to 
+    the "graphihcs" directory and invoke "make".
+
+To run:
+
+    execute:
+      "driver.exe bondville.dat"
+
+Input file:
+
+    The forcing data and initial data are combined in a single file,
+    in this case called "bondville.dat".  A namelist section in 
+    that file describes site parameters and initial conditions. The
+    namelist is followed by records of forcing fields.
+
+Output files:
+
+    Output will go to files "OUTPUT.????.nc", where "????" refers to
+    the iteration number of an iteratively-cycled period.  At the
+    driver level, the code to add or remove variables in the output
+    files is easily adaptable.  See (in the driver code) the calls to
+    subroutines output_levels and output_var.
+
+To create some simple graphical output:
+
+    To try the graphics code, execute:
+       "graphics.exe -namelist graphics.namelist OUTPUT.nc OUTPUT.nc".
+    The program creates an NCAR-Graphics gmeta file called "compare.cgm"
+    Some tuning of the graphics is possible via options in the 
+    "graphics.namelist" file.
+
+    To see a few simple options to the graphics program, execute
+    "graphics.exe -help"
