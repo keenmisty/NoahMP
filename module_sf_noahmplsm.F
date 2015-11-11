@@ -128,8 +128,8 @@ module noahmp_globals
 
 ! =====================================options for different schemes================================
 ! options for dynamic vegetation: 
-! 1 -> off (use table LAI; use FVEG = SHDFAC from input)
-! 2 -> on (together with OPT_CRS = 1)
+! 1 -> off (use table LAI; use FVEG = SHDFAC from input)  ! the best one but needs enough obs data
+! 2 -> on (together with OPT_CRS = 1)                     ! the second choice if has not enough obs
 ! 3 -> off (use table LAI; calculate FVEG)
 ! 4 -> off (use table LAI; use maximum vegetation fraction)
 
@@ -138,14 +138,14 @@ module noahmp_globals
 ! options for canopy stomatal resistance
 ! 1-> Ball-Berry; 2->Jarvis
 
-  INTEGER :: OPT_CRS != 1    !(must 1 when DVEG = 2)
+  INTEGER :: OPT_CRS != 1    !(must 1 when DVEG = 2)      ! same as the OBS_DVEG
 
-! options for soil moisture factor for stomatal resistance
+! options for soil moisture factor for stomatal resistance 
 ! 1-> Noah (soil moisture) 
 ! 2-> CLM  (matric potential)
 ! 3-> SSiB (matric potential)
 
-  INTEGER :: OPT_BTR != 1    !(suggested 1)
+  INTEGER :: OPT_BTR != 1    !(suggested 1)               ! Noah type is better than others
 
 ! options for runoff and groundwater
 ! 1 -> TOPMODEL with groundwater (Niu et al. 2007 JGR) ;
@@ -153,7 +153,7 @@ module noahmp_globals
 ! 3 -> original surface and subsurface runoff (free drainage)
 ! 4 -> BATS surface and subsurface runoff (free drainage)
 
-  INTEGER :: OPT_RUN != 1    !(suggested 1)
+  INTEGER :: OPT_RUN != 1    !(suggested 1)               ! 
 
 ! options for surface layer drag coeff (CH & CM)
 ! 1->M-O ; 2->original Noah (Chen97); 3->MYJ consistent; 4->YSU consistent. 
