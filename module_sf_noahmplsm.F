@@ -138,66 +138,66 @@ module noahmp_globals
 ! options for canopy stomatal resistance
 ! 1-> Ball-Berry; 2->Jarvis
 
-  INTEGER :: OPT_CRS != 1    !(must 1 when DVEG = 2)      ! same as the OBS_DVEG
+  INTEGER :: OPT_CRS != 1    !(must 1 when DVEG = 2)      ! should not same as DVEG , same as OBS_DVEG
 
 ! options for soil moisture factor for stomatal resistance 
 ! 1-> Noah (soil moisture) 
 ! 2-> CLM  (matric potential)
 ! 3-> SSiB (matric potential)
 
-  INTEGER :: OPT_BTR != 1    !(suggested 1)               ! Noah type is better than others
+  INTEGER :: OPT_BTR != 1    !(suggested 1)               ! Noah type is better than others (edit by chang)
 
 ! options for runoff and groundwater
-! 1 -> TOPMODEL with groundwater (Niu et al. 2007 JGR) ;
+! 1 -> TOPMODEL with groundwater (Niu et al. 2007 JGR) ;  
 ! 2 -> TOPMODEL with an equilibrium water table (Niu et al. 2005 JGR) ;
 ! 3 -> original surface and subsurface runoff (free drainage)
 ! 4 -> BATS surface and subsurface runoff (free drainage)
 
-  INTEGER :: OPT_RUN != 1    !(suggested 1)               ! 
+  INTEGER :: OPT_RUN != 1    !(suggested 1)               ! TOPMODEL with groundwater is better
 
 ! options for surface layer drag coeff (CH & CM)
 ! 1->M-O ; 2->original Noah (Chen97); 3->MYJ consistent; 4->YSU consistent. 
 
-  INTEGER :: OPT_SFC != 1    !(1 or 2 or 3 or 4)
+  INTEGER :: OPT_SFC != 1    !(1 or 2 or 3 or 4)          ! opt 3,4 only coupled in WRF v3.6
 
 ! options for supercooled liquid water (or ice fraction)
 ! 1-> no iteration (Niu and Yang, 2006 JHM); 2: Koren's iteration 
 
-  INTEGER :: OPT_FRZ != 1    !(1 or 2)
+  INTEGER :: OPT_FRZ != 1    !(1 or 2)                    ! little effect in DHS
 
 ! options for frozen soil permeability
 ! 1 -> linear effects, more permeable (Niu and Yang, 2006, JHM)
 ! 2 -> nonlinear effects, less permeable (old)
 
-  INTEGER :: OPT_INF != 1    !(suggested 1)
+  INTEGER :: OPT_INF != 1    !(suggested 1)               ! little effect in DHS
 
 ! options for radiation transfer
 ! 1 -> modified two-stream (gap = F(solar angle, 3D structure ...)<1-FVEG)
 ! 2 -> two-stream applied to grid-cell (gap = 0)
 ! 3 -> two-stream applied to vegetated fraction (gap=1-FVEG)
 
-  INTEGER :: OPT_RAD != 1    !(suggested 1)
+  INTEGER :: OPT_RAD != 1    !(suggested 1)               ! opt=2 maybe better in DHS due to the high VEG
 
 ! options for ground snow surface albedo
 ! 1-> BATS; 2 -> CLASS
 
-  INTEGER :: OPT_ALB != 2    !(suggested 2)
+  INTEGER :: OPT_ALB != 2    !(suggested 2)               ! little effect in DHS
 
 ! options for partitioning  precipitation into rainfall & snowfall
 ! 1 -> Jordan (1991); 2 -> BATS: when SFCTMP<TFRZ+2.2 ; 3-> SFCTMP<TFRZ
 
-  INTEGER :: OPT_SNF != 1    !(suggested 1)
+  INTEGER :: OPT_SNF != 1    !(suggested 1)               ! little effect in DHS
 
 ! options for lower boundary condition of soil temperature
 ! 1 -> zero heat flux from bottom (ZBOT and TBOT not used)
 ! 2 -> TBOT at ZBOT (8m) read from a file (original Noah)
 
-  INTEGER :: OPT_TBOT != 2   !(suggested 2)
+  INTEGER :: OPT_TBOT != 2   !(suggested 2)               ! little effect in DHS
 
 ! options for snow/soil temperature time scheme (only layer 1)
 ! 1 -> semi-implicit; 2 -> full implicit (original Noah)
 
-  INTEGER :: OPT_STC != 1    !(suggested 1)
+  INTEGER :: OPT_STC != 1    !(suggested 1)               ! little effect in DHS
 ! ==================================================================================================
 ! runoff parameters used for SIMTOP and SIMGM:
   REAL, PARAMETER :: TIMEAN = 10.5   !gridcell mean topgraphic index (global mean)
