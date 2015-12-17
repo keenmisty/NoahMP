@@ -264,8 +264,8 @@ contains
     !
 
     use_urban_module = .FALSE.
-    usemonalb        = .FALSE.
-    rdlai2d          = .FALSE.
+    usemonalb        = .TRUE.
+    rdlai2d          = .TRUE.
 
     opt_dveg         = 2
     opt_crs          = 1
