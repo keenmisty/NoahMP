@@ -1,0 +1,89 @@
+131,132c131,132
+< ! 1 -> off (use table LAI; use FVEG = SHDFAC from input)  ! the best one but needs enough obs data
+< ! 2 -> on (together with OPT_CRS = 1)                     ! the second choice if has not enough obs
+---
+> ! 1 -> off (use table LAI; use FVEG = SHDFAC from input)
+> ! 2 -> on (together with OPT_CRS = 1)
+141c141
+<   INTEGER :: OPT_CRS != 1    !(must 1 when DVEG = 2)      ! should not same as DVEG , same as OBS_DVEG
+---
+>   INTEGER :: OPT_CRS != 1    !(must 1 when DVEG = 2)
+143c143
+< ! options for soil moisture factor for stomatal resistance 
+---
+> ! options for soil moisture factor for stomatal resistance
+148c148
+<   INTEGER :: OPT_BTR != 1    !(suggested 1)               ! Noah type is better than others (edit by chang)
+---
+>   INTEGER :: OPT_BTR != 1    !(suggested 1)
+151c151
+< ! 1 -> TOPMODEL with groundwater (Niu et al. 2007 JGR) ;  
+---
+> ! 1 -> TOPMODEL with groundwater (Niu et al. 2007 JGR) ;
+156c156
+<   INTEGER :: OPT_RUN != 1    !(suggested 1)               ! TOPMODEL with groundwater is better
+---
+>   INTEGER :: OPT_RUN != 1    !(suggested 1)
+161c161
+<   INTEGER :: OPT_SFC != 1    !(1 or 2 or 3 or 4)          ! opt 3,4 only coupled in WRF v3.6
+---
+>   INTEGER :: OPT_SFC != 1    !(1 or 2 or 3 or 4)
+166c166
+<   INTEGER :: OPT_FRZ != 1    !(1 or 2)                    ! little effect in DHS
+---
+>   INTEGER :: OPT_FRZ != 1    !(1 or 2)
+172c172
+<   INTEGER :: OPT_INF != 1    !(suggested 1)               ! little effect in DHS
+---
+>   INTEGER :: OPT_INF != 1    !(suggested 1)
+179c179
+<   INTEGER :: OPT_RAD != 1    !(suggested 1)               ! opt=2 maybe better in DHS due to the high VEG
+---
+>   INTEGER :: OPT_RAD != 1    !(suggested 1)
+184c184
+<   INTEGER :: OPT_ALB != 2    !(suggested 2)               ! little effect in DHS
+---
+>   INTEGER :: OPT_ALB != 2    !(suggested 2)
+189c189
+<   INTEGER :: OPT_SNF != 1    !(suggested 1)               ! little effect in DHS
+---
+>   INTEGER :: OPT_SNF != 1    !(suggested 1)
+195c195
+<   INTEGER :: OPT_TBOT != 2   !(suggested 2)               ! little effect in DHS
+---
+>   INTEGER :: OPT_TBOT != 2   !(suggested 2)
+200c200
+<   INTEGER :: OPT_STC != 1    !(suggested 1)               ! little effect in DHS
+---
+>   INTEGER :: OPT_STC != 1    !(suggested 1)
+563c563
+<        &           ERRWAT  , CHV     , CHB     , EMISSI)                         ! OUT :
+---
+>        &           ERRWAT  , CHV     , CHB     , EMISSI  , BTRAN)                         ! OUT :
+710c710
+<   REAL                                           :: BTRAN  !soil water transpiration factor (0 - 1)
+---
+>   REAL, INTENT(OUT)                              :: BTRAN  !soil water transpiration factor (0 - 1)
+805c805
+< !input GVF (Greenness Vegetation Fraction) should be consistent with LAI
+---
+> !input GVF should be consistent with LAI
+945c945
+< !jref: seems like PAIR should be P1000mb?? !edit by chang
+---
+> !jref: seems like PAIR should be P1000mb??
+947d946
+<     !   PAIR   = 101325                 ! pair should be the Standard surface pressure  edit by chang
+1601c1600
+<         !    RSURF = FSNO * 1. + (1.-FSNO)* EXP(8.25-4.225*BEVAP) !Sellers (1992)
+---
+>         !    RSURF = FSNO * 1. + (1.-FSNO)* EXP(8.25-4.225*BEVAP) !Sellers (1992) ! edit by chang 2015/1/16
+2000c1999,2000
+<     THKO = 2.0
+---
+> !    THKO = 2.0
+>      THKO = 0.026 ! edit by chang 2015/1/14
+8052c8052
+<   REAL, PARAMETER                             :: CMIC = 0.20   !microprore content (0.0-1.0)
+---
+>   REAL, PARAMETER                             :: CMIC = 0 !.20   !microprore content (0.0-1.0) edit by chang
