@@ -34,7 +34,7 @@ program driver
   integer, parameter :: iunit = 10
   real :: latitude, longitude
   integer :: isurban
-  real :: longwave
+  real :: longwave   ! longwave
   logical :: rdlai2d
   character(len=12) :: nowdate
   real :: sfcspd, sfcu, sfcv
