@@ -700,8 +700,8 @@ program driver
      ! call output_var(ktime, fastcp,    "FASTCP",  "Short-lived carbon in shallow soil",                "g m{-2}"          )
      call output_var(ktime, lai,       "LAI",     "Leaf area index",                                   "-"                )
      call output_var(ktime, sai,       "SAI",     "Stem area index",                                   "-"                )
-     call output_var(ktime, cm,        "CM",      "Momentumm drag coefficient",                        "-"  )
-     call output_var(ktime, ch,        "CH",      "Sensible heat exchange coefficient",                "-"  )
+     call output_var(ktime, cm,        "CM",      "Momentumm drag coefficient",                        "-"  )                                     ! Need to notice
+     call output_var(ktime, ch,        "CH",      "Sensible heat exchange coefficient",                "-"  )                                     ! Need to notice
      call output_var(ktime, fsa,       "FSA",     "Total absorbed solar radiation",                    "W m{-2}"          )
      call output_var(ktime, fsr,       "FSR",     "Total reflected solar radiation",                   "W m{-2}"          )
      call output_var(ktime, fira,      "FIRA",    "Total net longwave radiation to atmosphere",        "W m{-2}"          )
@@ -726,7 +726,7 @@ program driver
      call output_var(ktime, gpp,       "GPP",     "Net instantaneous assimilation of Carbon",          "g m{-2} s{-1}"    )
      call output_var(ktime, npp,       "NPP",     "Net primary productivity of Carbon",                "g m{-2} s{-1}"    )
      call output_var(ktime, ts,        "TS",      "Surface temperature",                               "K"                )
-     call output_var(ktime, fveg,      "FVEG",    "Green vegetation fraction",                         "-"                )
+     call output_var(ktime, fveg,      "FVEG",    "Green vegetation fraction",                         "-"                )                                   ! 
      call output_var(ktime, albedo,    "ALBEDO",  "Surface albedo",                                    "-"                )
      call output_var(ktime, flxsum,    "FLXSUM",  "Flux sum",                                          "W m{-2}"          )
      call output_var(ktime, tauss,     "TAUSS",   "Snow aging term",                                   "-"                )
